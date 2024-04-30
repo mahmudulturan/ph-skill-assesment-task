@@ -8,7 +8,7 @@ import NavLink from '../NavLink/NavLink';
 
 const Sidebar = () => {
     return (
-        <div className='max-w-72 w-full border-r border-[#E2E8F0] min-h-screen bg-white sticky top-0 px-3'>
+        <div className='max-w-72 w-full border-r border-[#E2E8F0] min-h-screen bg-white sticky top-0 px-3 shadow'>
             <div>
                 <Link href={'/'}>
                     <Image className='w-1/2 mx-auto py-3' src={logo} alt='Logo of project pulse' />
