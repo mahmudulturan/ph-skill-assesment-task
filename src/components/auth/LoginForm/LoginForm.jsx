@@ -13,7 +13,7 @@ const LoginForm = () => {
         <div className=''>
             <div className='my-5'>
                 <Link href={'/'}>
-                    <Image className='w-1/2 mx-auto ' src={logo} alt='Logo of project pulse' />
+                    <Image className='w-1/2 mx-auto my-3' src={logo} alt='Logo of project pulse' />
                 </Link>
                 <div>
                     <h3 className='text-xl font-semibold text-primaryCol text-center my-2'>Wellcome Back!</h3>
