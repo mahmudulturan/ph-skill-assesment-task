@@ -11,12 +11,14 @@ const LoginForm = () => {
     };
     return (
         <div className=''>
-            <Link href={'/'}>
-                <Image className='w-1/2 mx-auto py-3' src={logo} alt='Logo of project pulse' />
-            </Link>
-            <div>
-                <h3 className='text-xl font-semibold text-primaryCol text-center my-2'>Wellcome Back!</h3>
-                <h3 className='text-base font-medium text-black/70 text-center my-2'>Sign in to continue to Project Pulse.</h3>
+            <div className='my-5'>
+                <Link href={'/'}>
+                    <Image className='w-1/2 mx-auto ' src={logo} alt='Logo of project pulse' />
+                </Link>
+                <div>
+                    <h3 className='text-xl font-semibold text-primaryCol text-center my-2'>Wellcome Back!</h3>
+                    <h3 className='text-base font-medium text-black/70 text-center my-2'>Sign in to continue to Project Pulse.</h3>
+                </div>
             </div>
             <Form
                 name="normal_login"
