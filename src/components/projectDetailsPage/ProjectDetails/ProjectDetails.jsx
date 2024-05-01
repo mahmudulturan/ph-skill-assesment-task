@@ -20,7 +20,7 @@ const ProjectDetails = ({ id }) => {
                         <p className='max-w-2xl'>{project?.project_description}</p>
                     </div>
                     <div className='flex-1 h-full'>
-                        <Todo />
+                        <Todo tasks={project?.tasks} />
                     </div>
                 </div>
                 <TeamMembers />
