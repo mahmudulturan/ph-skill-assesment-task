@@ -15,9 +15,6 @@ const Layout = ({ children }) => {
                 <div className='mx-4 my-4'>
                     {children}
                 </div>
-                <div className="min-h-screen"></div>
-                <div className="min-h-screen"></div>
-                <div className="min-h-screen"></div>
             </div>
         </main>
     );
