@@ -19,7 +19,7 @@ const OngoingTask = ({ tasks }) => {
             <h3 className='text-xl font-medium duration-300 group-hover:text-primaryCol'>Running</h3>
             <div className='my-6 space-y-3'>
                 {
-                    tasks.filter(task => task.progress === "running").map(task => <TaskCard task={task} />)
+                    tasks?.filter(task => task.progress === "running").map(task => <TaskCard task={task} />)
                 }
             </div>
         </div>

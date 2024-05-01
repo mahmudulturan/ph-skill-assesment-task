@@ -1,9 +1,8 @@
 "use client"
 import useProjectById from '@/hooks/useProjectById';
-import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import TeamMembers from '../TeamMembers/TeamMembers';
-import Todo from '../ToDo/Todo';
+import Todo from '../Tasks/Tasks';
 
 const ProjectDetails = ({ id }) => {
     const { project, isLoading } = useProjectById({ id });

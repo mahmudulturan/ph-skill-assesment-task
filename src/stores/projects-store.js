@@ -6,5 +6,10 @@ export const useProjectsStore = create((set) => ({
         set((state) => ({
             projects: projects
         }))
-    }
+    },
+    changeTaskProgress: (task) => {
+        set((state) => ({
+            projects: task
+        }))
+    },
 }))

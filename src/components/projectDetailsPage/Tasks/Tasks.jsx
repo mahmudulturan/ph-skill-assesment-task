@@ -1,5 +1,4 @@
 import React from 'react';
-import TaskCard from './TaskCard';
 import PendingTask from './PendingTask';
 import OngoingTask from './OngoingTask';
 import CompletedTask from './CompletedTask';
