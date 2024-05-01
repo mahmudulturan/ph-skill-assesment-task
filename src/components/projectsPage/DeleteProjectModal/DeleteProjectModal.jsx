@@ -38,7 +38,7 @@ const DeleteProjectModal = ({ id }) => {
             setOpen(false);
         }
         else {
-            toast.error("Project add failed");
+            toast.error("Project delete failed");
         }
     }
     return (
