@@ -17,9 +17,9 @@ const Sidebar = () => {
             <div className='my-3'>
                 <h6 className='text-black/80 uppercase text-xs font-medium'>Menu</h6>
                 <div className='flex flex-col gap-2 my-3'>
-                    <NavLink href={'/'}> <GrProjects /> Projects</NavLink>
+                    <NavLink href={'/projects'}> <GrProjects /> Projects</NavLink>
                     <NavLink href={'/tasks'}> <FaTasks /> Tasks</NavLink>
-                    <NavLink href={'/my-tasks'}>My Tasks</NavLink>
+                    <NavLink href={'/my-tasks'}><FaTasks /> My Tasks</NavLink>
                 </div>
             </div>
         </div>
