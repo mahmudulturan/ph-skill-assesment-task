@@ -1,12 +1,21 @@
+"use client"
 import React from 'react';
 import { MdModeEditOutline, MdDelete } from "react-icons/md";
 import { BiSolidDetail } from "react-icons/bi";
 import { FaArrowRight } from "react-icons/fa6";
 import { Tooltip } from 'antd';
+import { useDrag } from 'react-dnd';
 
 const TaskCard = ({ task }) => {
+    const [{ isDragging }, drag] = useDrag(() => ({
+        type: "task",
+        item: { _id: task._id },
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging()
+        })
+    }))
     return (
-        <div className='bg-[#F1F5F9] px-2 py-2 rounded-md cursor-pointer'>
+        <div ref={drag} className={`${isDragging? "bg-white/65" : "bg-[#F1F5F9]"}  px-2 py-2 rounded-md cursor-pointer`}>
             <h5 className='text-lg font-medium'>
                 {task?.description}
             </h5>

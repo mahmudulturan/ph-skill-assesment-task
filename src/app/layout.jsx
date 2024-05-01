@@ -2,6 +2,7 @@ import { Public_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
+import DnDProvider from "@/providers/DnDProvider";
 
 const public_sans = Public_Sans({ subsets: ["latin"] });
 
@@ -15,10 +16,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={public_sans.className}>
         <ReactQueryProvider>
-          <Toaster />
-          {children}
+          <DnDProvider>
+            <Toaster />
+            {children}
+          </DnDProvider>
         </ReactQueryProvider>
       </body>
-    </html>
+    </html >
   );
 }
