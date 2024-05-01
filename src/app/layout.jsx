@@ -1,5 +1,6 @@
 import { Public_Sans } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const public_sans = Public_Sans({ subsets: ["latin"] });
 
@@ -11,7 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={public_sans.className}>{children}</body>
+      <body className={public_sans.className}>
+        <Toaster />
+        {children}
+      </body>
     </html>
   );
 }

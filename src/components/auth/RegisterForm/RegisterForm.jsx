@@ -5,8 +5,10 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import logo from '@/assets/images/logo/main-logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import toast from 'react-hot-toast';
 const RegisterForm = () => {
     const onFinish = (values) => {
+        toast.success("Successfully Registered!")
         console.log('Received values of form: ', values);
     };
     return (

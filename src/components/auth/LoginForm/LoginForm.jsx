@@ -1,13 +1,25 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
 import logo from '@/assets/images/logo/main-logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import toast from 'react-hot-toast';
+
+
 const LoginForm = () => {
+    const [isLogin, setIslogin] = useState(false);
     const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+        console.log(values)
+        if (isLogin) {
+            setIslogin(pre => !pre);
+            return toast.success('Login Sucessfull!');
+        }
+        else {
+            setIslogin(pre => !pre);
+            return toast.error('Wrong Credentials!');
+        }
     };
     return (
         <div className=''>
