@@ -6,7 +6,8 @@ import toast from 'react-hot-toast';
 import useProjects from '@/hooks/useProjects';
 
 
-const CollectionCreateForm = ({ initialValues, onFormInstanceReady }) => {
+// modal form component
+const AddProjectModalForm = ({ initialValues, onFormInstanceReady }) => {
     const [form] = Form.useForm();
     useEffect(() => {
         onFormInstanceReady(form);
@@ -41,43 +42,11 @@ const CollectionCreateForm = ({ initialValues, onFormInstanceReady }) => {
     );
 };
 
-const CollectionCreateFormModal = ({ open, onCreate, onCancel, initialValues }) => {
-    const [formInstance, setFormInstance] = useState();
-    return (
-        <Modal
-            open={open}
-            title="Add A New Project"
-            okText="Add Project"
-            cancelText="Cancel"
-            okButtonProps={{
-                autoFocus: true,
-            }}
-            onCancel={onCancel}
-            destroyOnClose
-            onOk={async () => {
-                try {
-                    const values = await formInstance?.validateFields();
-                    formInstance?.resetFields();
-                    onCreate(values);
-                } catch (error) {
-                    console.log('Failed:', error);
-                }
-            }}
-        >
-            <CollectionCreateForm
-                initialValues={initialValues}
-                onFormInstanceReady={(instance) => {
-                    setFormInstance(instance);
-                }}
-            />
-        </Modal>
-    );
-};
-
-
+// modal component
 const AddProjectModal = () => {
     const [open, setOpen] = useState(false);
     const { refetch } = useProjects();
+    const [formInstance, setFormInstance] = useState();
 
 
     // Define the create function
@@ -111,14 +80,35 @@ const AddProjectModal = () => {
                 <FiPlus className='w-10 h-10 text-primaryCol' />
                 <h1 className='text-xl font-semibold uppercase mb-3 group-hover:text-primaryCol duration-300'>Add New Project</h1>
             </div>
-            <CollectionCreateFormModal
+            <Modal
                 open={open}
-                onCreate={onCreate}
-                onCancel={() => setOpen(false)}
-                initialValues={{
-                    modifier: 'public',
+                title="Add A New Project"
+                okText="Add Project"
+                cancelText="Cancel"
+                okButtonProps={{
+                    autoFocus: true,
                 }}
-            />
+                onCancel={() => setOpen(false)}
+                destroyOnClose
+                onOk={async () => {
+                    try {
+                        const values = await formInstance?.validateFields();
+                        formInstance?.resetFields();
+                        onCreate(values);
+                    } catch (error) {
+                        console.log('Failed:', error);
+                    }
+                }}
+            >
+                <AddProjectModalForm
+                    initialValues={{
+                        modifier: 'public',
+                    }}
+                    onFormInstanceReady={(instance) => {
+                        setFormInstance(instance);
+                    }}
+                />
+            </Modal>
         </>
     );
 };
