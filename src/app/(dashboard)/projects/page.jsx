@@ -1,10 +1,11 @@
-import Projects from '@/components/projectsPage/projects/Projects/Projects';
+import AllProjects from '@/components/projectsPage/AllProjects/AllProjects';
 import React from 'react';
 
 const page = () => {
     return (
         <div>
-            <Projects />
+            <h3 className='text-2xl font-medium uppercase'>Projects</h3>
+            <AllProjects />
         </div>
     );
 };

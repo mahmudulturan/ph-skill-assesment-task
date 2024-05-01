@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 import { MdEdit, MdDelete } from "react-icons/md";
-import DeleteProjectModal from '../../DeleteProjectModal/DeleteProjectModal';
-import UpdateProjectModal from '../../UpdateProjectModal/UpdateProjectModal';
+import DeleteProjectModal from '../DeleteProjectModal/DeleteProjectModal';
+import UpdateProjectModal from '../UpdateProjectModal/UpdateProjectModal';
 
 const ProjectCard = ({ project }) => {
     return (
