@@ -6,7 +6,7 @@ import Todo from '../Tasks/Tasks';
 
 const ProjectDetails = ({ id }) => {
     const { project, isLoading } = useProjectById({ id });
-
+    console.log(project)
     if (isLoading) {
         return;
     }
